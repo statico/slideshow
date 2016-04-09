@@ -18,11 +18,15 @@ h1
 
 #slideshow
   display: flex
+  height: 100vh
+  will-change: overflow
+
+  #menu, #viewport
+    overflow: auto
+    height: auto
 
   #menu
     width: 250px
-    overflow-x: hidden
-    overflow-y: scroll
 
     ul
       list-style-type: none
@@ -51,6 +55,5 @@ h1
 
   #viewport
     flex: 1
-    display: flex
     & > *
       width: 100%

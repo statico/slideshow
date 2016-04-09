@@ -22,6 +22,7 @@ class Menu extends React.Component
     defer =>
       @setState(index: index)
       @props.onChange?(index)
+      document.location.hash = '#' + index
 
   componentDidMount: ->
     window.addEventListener 'hashchange', @_readHash
@@ -32,7 +33,7 @@ class Menu extends React.Component
         when 'KeyK'
           @_setIndex @state.index - 1
     if document.location.hash is ''
-      document.location.hash = '0'
+      document.location.hash = '#0'
     @_readHash()
     return
 

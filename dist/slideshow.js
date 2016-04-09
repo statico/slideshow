@@ -21172,7 +21172,10 @@ module.exports = Object.assign || function (target, source) {
           _this.setState({
             index: index
           });
-          return typeof (base = _this.props).onChange === "function" ? base.onChange(index) : void 0;
+          if (typeof (base = _this.props).onChange === "function") {
+            base.onChange(index);
+          }
+          return document.location.hash = '#' + index;
         };
       })(this));
     };
@@ -21190,7 +21193,7 @@ module.exports = Object.assign || function (target, source) {
         };
       })(this));
       if (document.location.hash === '') {
-        document.location.hash = '0';
+        document.location.hash = '#0';
       }
       this._readHash();
     };
