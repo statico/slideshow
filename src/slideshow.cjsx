@@ -40,6 +40,7 @@ class Menu extends React.Component
   render: ->
     <div id="menu">
       {@props.children}
+      <p>Use J and K keys to navigate</p>
       <ul>
         {for path, i in @props.paths
           do (path, i) =>

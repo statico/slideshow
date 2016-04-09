@@ -21202,7 +21202,7 @@ module.exports = Object.assign || function (target, source) {
       var i, path;
       return React.createElement("div", {
         "id": "menu"
-      }, this.props.children, React.createElement("ul", null, (function() {
+      }, this.props.children, React.createElement("p", null, "Use J and K keys to navigate"), React.createElement("ul", null, (function() {
         var j, len, ref, results;
         ref = this.props.paths;
         results = [];
