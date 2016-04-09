@@ -1,0 +1,56 @@
+bg = #444
+fg = white
+
+body
+  background: bg
+  color: fg
+  font-family: sans-serif
+  overflow: hidden
+
+h1
+  font-size: 120%
+
+::-webkit-scrollbar
+  -webkit-appearance: none
+  width: 7px
+::-webkit-scrollbar-thumb
+  background-color: darken(fg, 50%)
+
+#slideshow
+  display: flex
+
+  #menu
+    width: 250px
+    overflow-x: hidden
+    overflow-y: scroll
+
+    ul
+      list-style-type: none
+      padding-left: 0
+      text-indent: 0
+      list-style-position: inside
+    li
+      margin-bottom: 0.2em
+
+    a
+      display: block
+      text-decoration: none
+      color: #ccc
+      border-left: 3px solid transparent
+      padding-left: 4px
+      &.loading
+        border-left-color: #666
+      &.active
+        border-left-color: #ccc
+
+    .notice
+      color: darken(fg, 50%)
+      font-size: xx-small
+    .meta, .meta a
+      color: darken(fg, 50%)
+
+  #viewport
+    flex: 1
+    display: flex
+    & > *
+      width: 100%

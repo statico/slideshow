@@ -1,0 +1,36 @@
+{
+  "name": "slideshow",
+  "version": "1.0.0",
+  "description": "Quick and dirty directory slideshow",
+  "private": true,
+  "scripts": {
+    "react": "[ -e /tmp/react.js ] || curl -L https://fb.me/react-with-addons-15.0.1.js https://fb.me/react-dom-15.0.1.js >/tmp/react.js",
+    "bin": "( echo '#!/usr/bin/env node' ; coffee -cp src/dirlist-json.coffee ) >bin/dirlist-json && chmod +x bin/*",
+    "js": "npm run react && ( cat /tmp/react.js ; cjsx -cp src/slideshow.cjsx ) >dist/slideshow.js",
+    "css": "stylus -o dist -c src/slideshow.styl",
+    "build": "npm run js && npm run css && npm run bin",
+    "watch": "nodemon -w src -e coffee,styl,json,cjsx -x npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/statico/slideshow.git"
+  },
+  "keywords": [
+    "slideshow",
+    "images"
+  ],
+  "author": "Ian Langworth <ian@langworth.com>",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/statico/slideshow/issues"
+  },
+  "homepage": "https://github.com/statico/slideshow#readme",
+  "devDependencies": {
+    "coffee-react": "4.1.0",
+    "coffee-script": "1.10.0",
+    "sass": "0.5.0"
+  },
+  "dependencies": {
+    "stylus": "0.54.2"
+  }
+}
