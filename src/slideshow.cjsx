@@ -44,7 +44,7 @@ class Menu extends React.Component
       <ul>
         {for path, i in @props.paths
           do (path, i) =>
-            path = path.replace /\.\w+$/, ''
+            path = path.replace(/\.\w+$/, '').replace(/-/g, ' ')
             className = if i is @state.index then 'active' else ''
             <li key={i}>
               <a href="##{ i }" className={className}>{path}</a>

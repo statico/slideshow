@@ -21211,7 +21211,7 @@ module.exports = Object.assign || function (target, source) {
           results.push((function(_this) {
             return function(path, i) {
               var className;
-              path = path.replace(/\.\w+$/, '');
+              path = path.replace(/\.\w+$/, '').replace(/-/g, ' ');
               className = i === _this.state.index ? 'active' : '';
               return React.createElement("li", {
                 "key": i

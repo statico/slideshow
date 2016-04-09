@@ -14,7 +14,7 @@ h1
   -webkit-appearance: none
   width: 7px
 ::-webkit-scrollbar-thumb
-  background-color: darken(fg, 50%)
+  background-color: fg
 
 #slideshow
   display: flex
@@ -24,6 +24,8 @@ h1
   #menu, #viewport
     overflow: auto
     height: auto
+    padding-right: 3px
+    margin-right: 10px
 
   #menu
     width: 250px
@@ -45,7 +47,8 @@ h1
       &.loading
         border-left-color: #666
       &.active
-        border-left-color: #ccc
+        color: fg
+        border-left-color: fg
 
     p
       color: darken(fg, 50%)
